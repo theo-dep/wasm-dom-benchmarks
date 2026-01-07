@@ -1,0 +1,31 @@
+{
+  "name": "wasm-dom-benchmarks",
+  "version": "1.0.0",
+  "homepage": "https://github.com/theo-dep/wasm-dom-benchmarks#readme",
+  "bugs": {
+    "url": "https://github.com/theo-dep/wasm-dom-benchmarks/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theo-dep/wasm-dom-benchmarks.git"
+  },
+  "license": "MIT",
+  "author": "Théo Devaucoup",
+  "scripts": {
+    "asm-dom-js": "cd asm-dom-js && npx webpack serve",
+    "virtual-dom-js": "cd virtual-dom-js && npx webpack serve"
+  },
+  "dependencies": {
+    "asm-dom": "^0.7.0",
+    "virtual-dom": "^2.1.1"
+  },
+  "devDependencies": {
+    "browserify-fs": "^1.0.0",
+    "buffer": "^6.0.3",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}
