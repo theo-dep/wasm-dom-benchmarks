@@ -1,0 +1,3 @@
+[submodule "wasm-dom"]
+	path = wasm-dom
+	url = https://github.com/theo-dep/wasm-dom.git
