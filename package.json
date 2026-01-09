@@ -14,8 +14,10 @@
   "scripts": {
     "asm-dom-js": "cd asm-dom-js && npx webpack serve",
     "virtual-dom-js": "cd virtual-dom-js && npx webpack serve",
-    "wasm-dom-js-build": "cmake --preset emsdk && cmake --build build --config Release",
-    "wasm-dom-js": "npm run wasm-dom-js-build && cd wasm-dom-js && npx webpack serve"
+    "wasm-dom-js-build": "cmake --preset emsdk && cmake --build build --config Release --target wasm-dom-js",
+    "wasm-dom-js": "npm run wasm-dom-js-build && cd wasm-dom-js && npx webpack serve",
+    "wasm-dom-cpp-build": "cmake --preset emsdk && cmake --build build --config Release --target wasm-dom-cpp",
+    "wasm-dom-cpp": "npm run wasm-dom-cpp-build && emrun --port 9000 --no-browser build/wasm-dom-cpp/index.html"
   },
   "dependencies": {
     "asm-dom": "^0.7.0",

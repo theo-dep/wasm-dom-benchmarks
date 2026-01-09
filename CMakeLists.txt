@@ -9,4 +9,5 @@ set(WASM_DOM_NO_EXCEPTION ON)
 set(WASM_DOM_FULL_OPTIMISATION ON)
 
 add_subdirectory(wasm-dom)
+add_subdirectory(wasm-dom-cpp)
 add_subdirectory(wasm-dom-js)
