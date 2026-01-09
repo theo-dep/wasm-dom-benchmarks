@@ -13,7 +13,9 @@
   "author": "Théo Devaucoup",
   "scripts": {
     "asm-dom-js": "cd asm-dom-js && npx webpack serve",
-    "virtual-dom-js": "cd virtual-dom-js && npx webpack serve"
+    "virtual-dom-js": "cd virtual-dom-js && npx webpack serve",
+    "wasm-dom-js-build": "cmake --preset emsdk && cmake --build build --config Release",
+    "wasm-dom-js": "npm run wasm-dom-js-build && cd wasm-dom-js && npx webpack serve"
   },
   "dependencies": {
     "asm-dom": "^0.7.0",
@@ -22,6 +24,7 @@
   "devDependencies": {
     "browserify-fs": "^1.0.0",
     "buffer": "^6.0.3",
+    "copy-webpack-plugin": "^13.0.1",
     "path-browserify": "^1.0.1",
     "process": "^0.11.10",
     "stream-browserify": "^3.0.0",
