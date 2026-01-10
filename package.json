@@ -17,6 +17,7 @@
     "asm-dom-js-embind": "npm run asm-dom-js-embind-build && cd asm-dom-js-embind && npx webpack serve",
     "asm-dom-cpp-build": "cmake --preset emsdk && cmake --build build --config Release --target asm-dom-cpp",
     "asm-dom-cpp": "npm run asm-dom-cpp-build && emrun --port 9000 --no-browser build/asm-dom-cpp/index.html",
+    "snabbdom-js": "cd snabbdom-js && npx webpack serve",
     "virtual-dom-js": "cd virtual-dom-js && npx webpack serve",
     "wasm-dom-js-build": "cmake --preset emsdk && cmake --build build --config Release --target wasm-dom-js",
     "wasm-dom-js": "npm run wasm-dom-js-build && cd wasm-dom-js && npx webpack serve",
@@ -25,6 +26,7 @@
   },
   "dependencies": {
     "asm-dom": "^0.7.0",
+    "snabbdom": "^3.6.3",
     "virtual-dom": "^2.1.1"
   },
   "devDependencies": {
