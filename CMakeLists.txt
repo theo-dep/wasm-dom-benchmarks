@@ -13,4 +13,5 @@ set(WASM_DOM_FULL_OPTIMISATION ON)
 
 add_subdirectory(wasm-dom)
 add_subdirectory(wasm-dom-cpp)
+add_subdirectory(wasm-dom-c-js)
 add_subdirectory(wasm-dom-js)
