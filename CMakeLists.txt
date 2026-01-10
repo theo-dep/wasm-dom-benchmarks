@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(asm-dom-cpp)
+add_subdirectory(asm-dom-js-embind)
 
 set(WASM_DOM_STRICT ON)
 set(WASM_DOM_NO_EXCEPTION ON)
