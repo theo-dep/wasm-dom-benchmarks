@@ -14,31 +14,34 @@ const root = document.getElementById('root');
 patchFirst(root, vnode);
 
 let cnt = 0;
+const nbRuns = 100;
 const nbElements = 30000;
 const timeList = [];
 const id = setInterval(() => {
-  const start = performance.now();
-  {
-    const list = new asmdom.Children();
-    for (let i = 0; i < nbElements; i++) {
-      list.push_back(
-        h('div', {}, Math.random() + '')
-      );
-    }
-    const newVnode = hs('div', {}, list);
-    vnode = patch(vnode, newVnode);
+  const list = new asmdom.Children();
+  for (let i = 0; i < nbElements; i++) {
+    list.push_back(
+      h('div', {}, Math.random() + '')
+    );
   }
+  const newVnode = hs('div', {}, list);
+
+  const start = performance.now();
+  vnode = patch(vnode, newVnode);
   const end = performance.now();
   timeList.push(end - start);
 
   cnt++;
-  if (cnt >= 10) {
+  if (cnt >= nbRuns) {
     clearInterval(id);
 
     const list = new asmdom.Children();
+    list.push_back(
+      h('div', {}, `apply patch in ${nbElements} elements (ms)`)
+    );
     for (const mesure of timeList) {
       list.push_back(
-        h('div', {}, `apply patch in ${nbElements} elements: ${mesure.toFixed(2)} ms`)
+        h('div', {}, mesure.toFixed(2) + '')
       );
     }
     const endVnode = hs('div', {}, list);
